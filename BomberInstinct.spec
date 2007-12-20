@@ -13,6 +13,7 @@ Source1:	%{name}-48.png.bz2
 Source2:	%{name}-32.png.bz2
 Source3:	%{name}-16.png.bz2
 URL:		http://bomberinstinct.sourceforge.net/index.html
+BuildRoot:	%_tmppath/%{name}-%{version}-%{release}-root
 BuildRequires:	libSDL_mixer-devel >= 1.2.0
 
 %description
