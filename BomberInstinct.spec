@@ -36,16 +36,6 @@ and many more...), and with the special powers of each character.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-install -d $RPM_BUILD_ROOT{%{_menudir},%{_liconsdir},%{_iconsdir},%{_miconsdir}}
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%name
-?package(%name): \
-needs="x11" \
-section="More Applications/Games/Arcade" \
-title="%name" \
-longtitle="Bomberman clone" \
-command="%{_gamesbindir}/bi" \
-icon="%name.png" xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -84,5 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/%name.png
 %{_iconsdir}/mini/%name.png
 %{_liconsdir}/%name.png
-%{_menudir}/%name
 %_datadir/applications/mandriva*
