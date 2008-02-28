@@ -1,6 +1,6 @@
 %define	name	BomberInstinct
 %define version 0.8.9
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary:	Kill the other players with bombs that throw flames
 Name:		%{name}
@@ -50,6 +50,10 @@ StartupNotify=true
 Categories=X-MandrivaLinux-MoreApplications-Games-Arcade;Game;ArcadeGame;
 EOF
 
+#gw missing file(s):
+cp data/Sprites/*.spr %buildroot%{_gamesdatadir}/BomberInstinct/Sprites
+
+mkdir -p $RPM_BUILD_ROOT{%{_liconsdir},%_miconsdir}
 bzcat %{SOURCE1} > $RPM_BUILD_ROOT%{_liconsdir}/%name.png
 bzcat %{SOURCE2} > $RPM_BUILD_ROOT%{_iconsdir}/%name.png
 bzcat %{SOURCE3} > $RPM_BUILD_ROOT%{_miconsdir}/%name.png
