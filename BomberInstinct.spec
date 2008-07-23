@@ -1,6 +1,6 @@
 %define	name	BomberInstinct
 %define version 0.8.9
-%define release %mkrel 8
+%define release %mkrel 10
 
 Summary:	Kill the other players with bombs that throw flames
 Name:		%{name}
