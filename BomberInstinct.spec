@@ -1,6 +1,6 @@
 %define	name	BomberInstinct
 %define version 0.8.9
-%define release %mkrel 10
+%define release %mkrel 11
 
 Summary:	Kill the other players with bombs that throw flames
 Name:		%{name}
@@ -12,6 +12,7 @@ Source:		%{name}-%{version}.tar.bz2
 Source1:	%{name}-48.png.bz2
 Source2:	%{name}-32.png.bz2
 Source3:	%{name}-16.png.bz2
+Patch:      BomberInstinct-fix_missing_level.diff
 URL:		http://bomberinstinct.sourceforge.net/index.html
 BuildRoot:	%_tmppath/%{name}-%{version}-%{release}-root
 BuildRequires:	libSDL_mixer-devel >= 1.2.0
@@ -26,6 +27,7 @@ and many more...), and with the special powers of each character.
 
 %prep
 %setup -q
+%patch -p0
 
 %build
 %configure	--bindir=%{_gamesbindir} \
