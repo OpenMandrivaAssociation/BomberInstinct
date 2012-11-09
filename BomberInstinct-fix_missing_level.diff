@@ -1,0 +1,26 @@
+Index: data/bi.cfg
+===================================================================
+--- data/bi.cfg
++++ data/bi.cfg	2009-03-29 01:01:15.000000000 +0100
+@@ -21,8 +21,6 @@
+ NIVEAU=dyna.niv
+ NIVEAU=shadow.niv
+ NIVEAU=arena.niv
+-NIVEAU=labyrint.niv
+-NIVEAU=tubes.niv
+ 
+ PERSO=magus.spr
+ PERSO=troll.spr
+Index: data/bi_8characters.cfg
+===================================================================
+--- data/bi_8characters.cfg
++++ data/bi_8characters.cfg	2009-03-29 01:01:33.000000000 +0100
+@@ -21,8 +21,6 @@
+ NIVEAU=dyna.niv
+ NIVEAU=shadow.niv
+ NIVEAU=arena.niv
+-NIVEAU=labyrint.niv
+-NIVEAU=tubes.niv
+ 
+ PERSO=magus.spr
+ PERSO=troll.spr
