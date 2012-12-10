@@ -85,3 +85,81 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/mini/%name.png
 %{_liconsdir}/%name.png
 %_datadir/applications/mandriva*
+
+
+%changelog
+* Mon Sep 12 2011 GÃ¶tz Waschk <waschk@mandriva.org> 0.8.9-13mdv2012.0
++ Revision: 699458
+- rebuild
+
+* Thu Sep 10 2009 Thierry Vignaud <tv@mandriva.org> 0.8.9-12mdv2011.0
++ Revision: 436868
+- rebuild
+
+* Sun Mar 29 2009 Michael Scherer <misc@mandriva.org> 0.8.9-11mdv2009.1
++ Revision: 362062
+- add patch0, to fix bug 49246, by removing two level that do not exist
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.8.9-10mdv2009.0
++ Revision: 243360
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Thu Feb 28 2008 GÃ¶tz Waschk <waschk@mandriva.org> 0.8.9-8mdv2008.1
++ Revision: 176496
+- add missing file (bug #38229)
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Sun Aug 26 2007 GÃ¶tz Waschk <waschk@mandriva.org> 0.8.9-7mdv2008.0
++ Revision: 71595
+- Import BomberInstinct
+
+
+
+* Thu Aug 24 2006 Götz Waschk <waschk@mandriva.org> 0.8.9-7mdv2007.0
+- xdg menu
+
+* Thu Jun 15 2006 Lenny Cartier <lenny@mandriva.org> 0.8.9-6mdv2007.0
+- rebuild
+
+* Sun May 14 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.8.9-5mdk
+- Rebuild
+- use mkrel
+
+* Fri May 13 2005 Nicolas Lécureuil <neoclust@mandriva.org> 0.8.9-4mdk
+- Rebuild
+
+* Tue May 11 2004 Götz Waschk <waschk@linux-mandrake.com> 0.8.9-3mdk
+- fix menu section
+
+* Wed Jun 25 2003 Götz Waschk <waschk@linux-mandrake.com> 0.8.9-2mdk
+- remove redundant buildrequires
+
+* Fri Dec 27 2002 Götz Waschk <waschk@linux-mandrake.com> 0.8.9-1mdk
+- add missing binary
+- fix URL
+- new version
+
+* Tue Nov 12 2002 Lenny Cartier <lenny@mandrakesoft.com> 0.8.8-4mdk
+- from Per Øyvind Karlsen <peroyvind@delonic.no> :
+	- Removed obsolete Prefix tag
+	- Move stuff to correct places
+	- Cleanups
+
+* Fri Aug 16 2002 Götz Waschk <waschk@linux-mandrake.com> 0.8.8-3mdk
+- rebuild with new vorbis
+
+* Mon Apr 29 2002 Götz Waschk <waschk@linux-mandrake.com> 0.8.8-2mdk
+- rebuild with new alsa 
+
+* Tue Feb 26 2002 Götz Waschk <waschk@linux-mandrake.com> 0.8.8-1mdk
+- adapt package for Mandrake
