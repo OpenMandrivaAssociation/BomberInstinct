@@ -1,11 +1,7 @@
-%define	name	BomberInstinct
-%define version 0.8.9
-%define release 14
-
 Summary:	Kill the other players with bombs that throw flames
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		BomberInstinct
+Version:	0.8.9
+Release:	15
 License:	GPL
 Group:		Games/Arcade
 Source:		%{name}-%{version}.tar.bz2
@@ -39,7 +35,7 @@ export CXX=g++
 %configure	--bindir=%{_gamesbindir} \
 		--datadir=%{_gamesdatadir}
 		
-%make CXXFLAGS="-DNDEBUG %optflags"
+%make CXXFLAGS="-DNDEBUG %{optflags}"
 
 %install
 %makeinstall_std
@@ -48,7 +44,9 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
 Name=BomberInstinct
+Name[ru]=BomberInstinct
 Comment=Bomberman clone
+Comment[ru]=Игра по мотивам Bomberman
 Exec=%{_gamesbindir}/bi
 Icon=BomberInstinct
 Terminal=false
@@ -60,22 +58,21 @@ EOF
 cp data/Sprites/*.spr %{buildroot}%{_gamesdatadir}/BomberInstinct/Sprites
 
 install -d -m755  %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
-bzcat %{SOURCE1} > %{buildroot}%{_liconsdir}/%name.png
-bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%name.png
-bzcat %{SOURCE3} > %{buildroot}%{_miconsdir}/%name.png
+bzcat %{SOURCE1} > %{buildroot}%{_liconsdir}/%{name}.png
+bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%{name}.png
+bzcat %{SOURCE3} > %{buildroot}%{_miconsdir}/%{name}.png
 
 
 %files
-
 %doc AUTHORS ChangeLog LISEZMOI LISEZMOI.Nived README README.Nived  
 %doc docs/*.html docs/img scenario.txt 
 %{_gamesbindir}/bi
 %{_gamesbindir}/nived
 %{_gamesbindir}/spred
 %{_gamesdatadir}/BomberInstinct
-%{_iconsdir}/%name.png
-%{_miconsdir}/%name.png
-%{_liconsdir}/%name.png
+%{_iconsdir}/%{name}.png
+%{_miconsdir}/%{name}.png
+%{_liconsdir}/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 
 
