@@ -12,12 +12,11 @@ Source:		%{name}-%{version}.tar.bz2
 Source1:	%{name}-48.png.bz2
 Source2:	%{name}-32.png.bz2
 Source3:	%{name}-16.png.bz2
-Patch:      BomberInstinct-fix_missing_level.diff
+Patch:		BomberInstinct-fix_missing_level.diff
 URL:		http://bomberinstinct.sourceforge.net/index.html
 
 BuildRequires:	pkgconfig(SDL_mixer) >= 1.2.0
 # too much nested gcc
-# error: non-void function 'function'return a value [-Wreturn-type]
 BuildRequires:	gcc-c++, gcc, gcc-cpp
 
 
@@ -46,11 +45,11 @@ export CXX=g++
 %makeinstall_std
 
 mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
 Name=BomberInstinct
 Comment=Bomberman clone
-Exec=%_gamesbindir/bi
+Exec=%{_gamesbindir}/bi
 Icon=BomberInstinct
 Terminal=false
 Type=Application
@@ -58,10 +57,9 @@ StartupNotify=true
 Categories=X-MandrivaLinux-MoreApplications-Games-Arcade;Game;ArcadeGame;
 EOF
 
-#gw missing file(s):
 cp data/Sprites/*.spr %{buildroot}%{_gamesdatadir}/BomberInstinct/Sprites
 
-mkdir -p %{buildroot}%{_liconsdir},%_miconsdir}
+mkdir -p {%{buildroot},%{_liconsdir},%{_miconsdir}}
 bzcat %{SOURCE1} > %{buildroot}%{_liconsdir}/%name.png
 bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%name.png
 bzcat %{SOURCE3} > %{buildroot}%{_miconsdir}/%name.png
@@ -76,8 +74,8 @@ bzcat %{SOURCE3} > %{buildroot}%{_miconsdir}/%name.png
 %{_gamesbindir}/spred
 %{_gamesdatadir}/BomberInstinct
 %{_iconsdir}/%name.png
-%{_iconsdir}/mini/%name.png
+%{_miconsdir}/%name.png
 %{_liconsdir}/%name.png
-%_datadir/applications/mandriva*
+%{_datadir}/applications/%{name}.desktop
 
 
