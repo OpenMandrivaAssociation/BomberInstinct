@@ -59,7 +59,7 @@ EOF
 
 cp data/Sprites/*.spr %{buildroot}%{_gamesdatadir}/BomberInstinct/Sprites
 
-mkdir -p {%{buildroot},%{_liconsdir},%{_miconsdir}}
+install -d -m755  %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
 bzcat %{SOURCE1} > %{buildroot}%{_liconsdir}/%name.png
 bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%name.png
 bzcat %{SOURCE3} > %{buildroot}%{_miconsdir}/%name.png
