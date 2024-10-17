@@ -9,7 +9,7 @@ Source1:	%{name}-48.png.bz2
 Source2:	%{name}-32.png.bz2
 Source3:	%{name}-16.png.bz2
 Patch:		BomberInstinct-fix_missing_level.diff
-URL:		http://bomberinstinct.sourceforge.net/index.html
+URL:		https://bomberinstinct.sourceforge.net/index.html
 
 BuildRequires:	pkgconfig(SDL_mixer) >= 1.2.0
 # too much nested gcc
