@@ -11,6 +11,11 @@ Source3:	%{name}-16.png.bz2
 Patch:		BomberInstinct-fix_missing_level.diff
 URL:		https://bomberinstinct.sourceforge.net/index.html
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(SDL_mixer) >= 1.2.0
 # too much nested gcc
 BuildRequires:	gcc-c++, gcc, gcc-cpp
